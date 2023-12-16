@@ -14,7 +14,14 @@ const controller = {
 		res.render("index", {title:"Home", products, toThousand})
 	},
 	search: (req, res) => {
-		// Do the magic
+		const busqueda = req.query.keywords
+		const products = getJson("productsDataBase.json");
+		const encontrado = products.filter(product =>{
+			 
+			return product.name.toLowerCase().includes(busqueda.toLowerCase())
+			
+		})
+		res.render("results", {encontrado, toThousand, busqueda})
 	},
 };
 
