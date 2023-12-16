@@ -21,7 +21,7 @@ const controller = {
 		const products = getJson("productsDataBase.json")
 		const product = products.find(producto => producto.id == id) 
 		const calc = product.price - ((product.price * product.discount) / 100)
-		res.render("detail",{title:products.name, product, calc, toThousand})
+		res.render("detail",{title:product.name, product, calc, toThousand})
 	},
 
 	// Create - Form to create
