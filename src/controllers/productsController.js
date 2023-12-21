@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const  { uuid }  =  require( 'uuidv4' ) ;
-const {setJson, getJson} = require("../utility/jsonMethod")
+const {setJson, getJson} = require("../utility/jsonMethod");
+const { log } = require('console');
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
@@ -31,13 +32,22 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		const product = req.body;
-		product.id = uuid();
+		const file = req.file;
+		const {name, price, discount, category, description}=req.body
+		const id = uuid();
 		const products = getJson("productsDataBase.json");
-		product.image = product.image ? product.imagen : "default-image.png"
+		const product ={
+			id,
+			name: name.trim(),
+			price:+price,
+			discount: +discount,
+			category,
+			description: description.trim(),
+			image: file ? file.filename : "default-image.png"
+		}
 		products.push(product);
 		setJson(products, "productsDataBase.json")
-		res.redirect(`/products/detail/${product.id}`)
+		res.redirect("/products")
 	},
 
 	// Update - Form to edit
