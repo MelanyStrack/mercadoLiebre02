@@ -60,6 +60,7 @@ const controller = {
 	// Update - Method to update
 	update: (req, res) => {
 		const {id} = req.params ;
+		const file = req.file;
 		const {name, description, price, discount,image,category}= req.body;
 		const products = getJson("productsDataBase.json");
 		const arrayNuevo = products.map(product =>{
@@ -70,12 +71,13 @@ const controller = {
 					description: description.trim(),
 					price: +price,
 					discount: +discount,
-					image: image ? image : product.image,
+					image: file ? file.filename : product.image,
 					category,
 				}
 			}
 			return product
 		})
+		
 		setJson(arrayNuevo, "productsDataBase.json")
 		res.redirect(`/products/detail/${id}`)
 	},
@@ -84,7 +86,11 @@ const controller = {
 	destroy : (req, res) => {
 		const {id} = req.params
 		const products = getJson("productsDataBase.json");
-		const newList = products.filter(product => product.id != id)
+		const product = products.find(product => product.id == id);
+		const newList = products.filter(product => product.id != id);
+		fs.unlink(`./public/images/products/${product.image}`, (err)=>{
+			if(err) throw err;
+		})
 		setJson(newList, "productsDataBase.json")
 		res.redirect(`/products`)
 	}

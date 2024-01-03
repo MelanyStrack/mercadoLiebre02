@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<div class="col-12">
-			<form action="/products/edit/<%= product.id %>?__method=PUT" method="POST">
+			<form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre del producto: </label>
@@ -42,7 +42,7 @@
 					</div>
 					<div class="col-12 col-md-6 edit-form-div-imagen">
 						<label for="image" class="form-label">Cargar imagen:</label>
-						<input type="file" id="image" name="image" class="form-input" value="<%= product.image %>">
+						<input type="file" id="image" name="image" class="form-input">
 						<p class="edit-form-div-imagen-p">Imagen actual:</p>
 						<img src="/images/products/<%= product.image ? product.image : "default-image.png" %>" alt="<%= product.nombre %>" class="product-edit-form__form-image"> 
 					</div>
