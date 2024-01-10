@@ -19,8 +19,6 @@ const usersController = require('../controllers/usersController');
 const validateRegister = require("../middlewares/registerMiddleware")
 
 
-
-
 router.get("/register", usersController.register);
 router.post("/register", upload.single("perfil"), validateRegister, usersController.store);
 
