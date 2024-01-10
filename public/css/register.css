@@ -1,0 +1,207 @@
+.register__main{
+    background-color:var(--color-gris-claro);
+    padding: 2% 4%;
+}
+.register__main h1{
+    margin-top: 5%;
+    color: var(--color-gris-oscuro);
+    text-align: center;
+}
+
+.register__form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.register__form input{
+    display: inline;
+    padding:3% 2.5%;
+    border: 1px solid white;
+    margin-top: 3%;
+    font-size: 12px;
+}
+
+.register__form label{
+    width: 100%;
+
+}
+
+.register__main__div__fecha{
+    margin-top: 10%;
+}
+
+
+.register__main__div__fecha input {
+    width: 100%;
+    margin-top: 5%;
+}
+
+.register__form__article__perfilUsuario{
+    display: flex;
+    flex-wrap: wrap;
+}
+.register__form__article__perfilUsuario div{
+    width: 50%;
+}
+.register__form__article__perfilUsuario div label{
+    padding-left: 10%;
+}
+
+.register__main__form__div__foto input{
+    margin-top: 2%;
+    background-color: white;
+}
+.register__main__form__div__foto{
+    margin-top: 5%;
+}
+
+.register__main form article{
+    margin-bottom:10%;
+    margin-top: 5%;
+}
+.register__main__article div label{
+    display: inline;
+    width: 40%;
+}
+
+.register__main__form__article__intereses input{
+    margin-left: 6%;
+}
+
+.register__main button{
+    background-color: #1259c3;;
+    border: 1px solid #1259c3;;
+    margin: 5% 0;
+    padding: 2.5%;
+    border-radius: 1%;
+    color: white;
+}
+
+.register__main a{
+    color: white;
+}
+.register__main form div label{
+    width: 100%;
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+}
+.register__main form div input{
+    width: 100%;
+
+}
+.register__main form div{
+    width: 100%;
+    margin: 2% 0;
+}
+.register__main form div p{
+    color: red;
+    font-size: 15px;
+}
+.register__main__form__div__foto input[type="file"]{
+    width: 60%;
+    font-size: 12px;
+}
+
+/* VERSION TABLET */
+@media (min-width: 768px){
+
+    .register__main h1{
+        font-size: 28px;
+    }
+    .register__main{
+        padding: 2% 10%;
+    }
+    .register__form input{
+        margin-top: 2%;
+        font-size: 18px;
+    }
+
+    .register__main__div__fecha{
+        margin-top: 5%;
+        margin-bottom: 8%;
+    }
+    .register__main form article{
+        margin-bottom:5%;
+        margin-top: 3%;
+    }
+    .register__main__form__div__foto{
+        margin-top: 2%;
+        margin-bottom: 4%;
+    }
+    .register__main__form__div__foto input{
+        display: block;
+        width: 100%;
+
+    }
+    .register__main button{
+        margin: 3% 0;
+    }
+
+.register__main__form__div__foto input[type="file"]{
+    width: 48%;
+    font-size: 18px;
+padding-left: 5%;
+
+}
+.register__main form div p{
+    font-size: 18px;
+}
+
+}
+ /* VERSION DESKTOP */
+@media (min-width: 1024px){
+    .register__main h1{
+        font-size: 35px;
+    }
+    .register__main__form__article__intereses{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .register__main form div label {
+
+        font-size: 30px;
+    }
+    
+    .register__main__form__article__intereses div{
+        width: 45%;
+    }
+    .register__main__form__article__intereses label{
+        width: 100%;
+    }
+    .register__main__form__article__intereses div label{
+        display: inline;
+        width: 10%;
+    }
+    .register__main__form__article__intereses div input {
+        display: inline;
+        width: 10%;
+        
+    }
+    .register__main button {
+        font-size: 20px;
+    }
+    .register__form__article__perfilUsuario{
+        width: 100%;
+    }
+    .register__main__form__div__foto{
+        margin-top: 3%;
+    }
+    .register__main form article{
+        margin-bottom:1%;
+    }
+    .register__main__form__div__foto input[type="file"]{
+        font-size: 25px;
+        width: 50%;
+    }
+    .register__form input{
+        margin-top: 2%;
+        font-size: 25px;
+    }
+    .register__main form div p{
+        color: red;
+        font-size: 25px;
+    }
+}

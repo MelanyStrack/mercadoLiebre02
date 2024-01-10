@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head') %>
+<link rel="stylesheet" href="/css/register.css">
+<body>
+	<!-- Header -->
+	<%- include('partials/headerNavbar') %>
+	<!-- /Header -->
+
+	<main class="register__main">
+        <h1>CREAR CUENTA</h1>
+        <form action="/users/register" method="post" class="register__form" enctype="multipart/form-data"> 
+
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" name="name" id="name"  value="<%= locals.old ? old.name : null %>">
+				<p><%=locals.errors && errors.name ? errors.name.msg : null %> </p>
+            </div>
+                
+
+                <div>
+                    <label for="surname">Apellido:</label>
+                    <input type="text" name="surname" id="surname"  value="<%= locals.old ? old.surname : null %>">
+				<p><%=locals.errors && errors.surname ? errors.surname.msg : null %> </p>
+
+                </div>
+                
+                <div>
+                    <label for="userName">Nombre de usuario:</label>
+                    <input type="text" name="userName" id="userName"  value="<%= locals.old ? old.userName : null %>">
+				<p><%=locals.errors && errors.userName ? errors.userName.msg : null %> </p>
+                </div>
+                
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" value="<%= locals.old ? old.email : null %>">
+				<p><%=locals.errors && errors.email ? errors.email.msg : null %> </p>
+                </div>
+                
+
+                <div>
+                    <label for="address">Domicilio:</label>
+                    <input type="text" name="address" id="adress"  value="<%= locals.old ? old.address : null %>">
+				<p><%=locals.errors && errors.address? errors.address.msg : null %> </p>
+                </div>
+                
+
+
+            <div class="register__main__form__div__foto">
+              <label for="foto" class="register__main__label__perfil" id="foto">Seleccionar una imagen para el perfil:</label>
+                <input type="file" name="perfil" id="foto" >
+            </div>
+    <div>
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" class="register__main__form__input__confirm__password" >
+				<p><%=locals.errors && errors.password ? errors.password.msg : null %> </p>
+    </div>
+                
+            
+            <button type="reset" class="register__main__form__button__cancelar" >Cancelar</button>
+            <button type="submit">Registrar</button>
+        </form>
+
+      </main>
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+</body>	
+</html>
